@@ -1,11 +1,9 @@
 <template>
-	<div class="sub-page">
-    <h1>
-      MY WISHLIST
-    </h1>
+  <div>
+    <h1>MY WISHLIST</h1>
     <form @submit="submmitInputMovieData">
-      <input type="text" v-model="inputData">
-      <button class="addBtn">Add</button>
+      <input class="fs-5 text-center" type="text" v-model="inputData" />
+      <button class="fs-5 addBtn">Add</button>
     </form>
     <WatchListItemVue
       v-for="movieData in watchList"
@@ -16,36 +14,35 @@
 </template>
 
 <script>
-import WatchListItemVue from '@/components/WatchListItem.vue';
+import WatchListItemVue from "@/components/WatchListItem.vue";
 
 export default {
-  name: 'WatchListView',
+  name: "WatchListView",
   data() {
     return {
       inputData: "",
-    }
+    };
   },
   computed: {
     watchList() {
-      return this.$store.state.watchList
-    } 
+      return this.$store.state.watchList;
+    },
   },
   components: {
     WatchListItemVue,
   },
   methods: {
     submmitInputMovieData(event) {
-      event.preventDefault()
+      event.preventDefault();
       if (this.inputData) {
-        this.$store.dispatch('submmitInputMovieData', this.inputData
-        )
-        this.inputData = ""
+        this.$store.dispatch("submmitInputMovieData", this.inputData);
+        this.inputData = "";
       } else {
-        alert('PUT YOUR WISH MOVIE')
+        alert("PUT YOUR WISH MOVIE");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>

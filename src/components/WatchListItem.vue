@@ -1,32 +1,42 @@
 <template>
-  <div :class="{ 'line-through' : islineThrough }"
+  <div
+    class="wish-movie"
+    :class="{ 'cancel-wish-movie': islineThrough }"
     @click="toggleLineThrough"
   >
-  {{ movieData }}
+    {{ movieData }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'WatchListItem',
+  name: "WatchListItem",
   props: {
     movieData: String,
   },
   data() {
     return {
-      islineThrough: false, 
-    }
+      islineThrough: false,
+    };
   },
   methods: {
     toggleLineThrough() {
-      this.islineThrough = !this.islineThrough
-    }
-  }
-}
+      this.islineThrough = !this.islineThrough;
+    },
+  },
+};
 </script>
 
 <style>
-.line-through {
+.cancel-wish-movie {
   text-decoration: line-through;
+  opacity: 0.4;
+}
+.wish-movie {
+  background-color: rgb(72, 84, 84);
+  margin: 10px;
+  font-size: 2rem;
+  color: aliceblue;
+  border-radius: 10px;
 }
 </style>
