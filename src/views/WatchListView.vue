@@ -1,11 +1,11 @@
 <template>
-	<div>
+	<div class="sub-page">
     <h1>
-      보고싶은 영화
+      MY WISHLIST
     </h1>
     <form @submit="submmitInputMovieData">
       <input type="text" v-model="inputData">
-      <button>Add</button>
+      <button class="addBtn">Add</button>
     </form>
     <WatchListItemVue
       v-for="movieData in watchList"
@@ -41,7 +41,7 @@ export default {
         )
         this.inputData = ""
       } else {
-        alert('입력해!')
+        alert('PUT YOUR WISH MOVIE')
       }
     }
   }
@@ -49,5 +49,11 @@ export default {
 </script>
 
 <style>
-
+input {
+  border-radius: 10px;
+}
+.addBtn {
+  margin-left: 10px;
+  border-radius: 5px;
+}
 </style>

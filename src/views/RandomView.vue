@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <button class="mt-4" @click="getRandomMovie">PICK</button>
+  <div class="sub-page">
+    <h1>WE CAN RECOMMAND FOR YOU !!</h1>
+    <div class="pick-btn" @click="getRandomMovie">💚</div>
 		<div id="wrapRandomMovie" class="d-none">
-			<img class="w-50"
+			<img class="random-img"
         :src="`https://image.tmdb.org/t/p/original${ movieJsonDataPosterPath }`"
         alt="poster">
 			<div>
-				<h3>{{ movieJsonDataTitle }}</h3>
+				<h3 class="movie-title">{{ movieJsonDataTitle }}</h3>
 			</div>
 		</div>
   </div>
@@ -35,6 +36,7 @@ export default {
           this.movieJsonDataOverview = randomMovie.overview
           const wrapRandomMovie = document.querySelector("#wrapRandomMovie")
           wrapRandomMovie.classList.remove("d-none")
+          wrapRandomMovie.classList.add("d-flex")
         })
         .catch((error) => {
           console.log(error)
@@ -45,5 +47,21 @@ export default {
 </script>
 
 <style>
+.movie-title {
+  text-align: center;
+  font-weight: bolder;
+}
 
+.pick-btn {
+  cursor: pointer;
+  font-size: 4rem;
+}
+
+#wrapRandomMovie {
+  margin: 0 auto;
+}
+
+.random-img {
+  width: 15vw;
+}
 </style>

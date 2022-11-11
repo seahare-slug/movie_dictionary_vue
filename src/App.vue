@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <div class="bg-success d-flex justify-content-between">
-      <img class="w-25" src="./assets/logo.png" alt="netflix-logo">
-      <nav class="w-50 h-25 d-flex justify-content-around">
-        <router-link to="/movie">Movie</router-link> 
-        <router-link to="/random">Random</router-link> 
+    <div class="bg-dark d-flex justify-content-between">
+      <router-link to="/"
+        ><img class="logo-image" src="./assets/logo.png" alt="netflix-logo"
+      /></router-link>
+      <nav class="d-flex align-items-center">
+        <router-link to="/movie">Movie</router-link>
+        <router-link to="/random">Random</router-link>
         <router-link to="/watchlist">WatchList</router-link>
       </nav>
     </div>
@@ -15,8 +17,8 @@
 <script>
 export default {
   name: "App",
-}
-
+  methods: {},
+};
 </script>
 
 <style>
@@ -28,16 +30,34 @@ export default {
   color: #2c3e50;
 }
 
+h1 {
+  margin: 60px;
+  font-weight: bold;
+}
+
 nav {
-  padding: 30px;
+  width: 100%;
 }
 
 nav a {
+  padding: 10px;
+  margin: 20px;
   font-weight: bold;
-  color: #2c3e50;
+  color: #355b82;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #be0f0f;
+}
+
+.sub-page {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.logo-image {
+  width: 200px;
+  height: 100px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>TopRatedMovie</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="sub-page">
+    <h1>Top Rated Movie</h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
       <TopRatedMovieVue
       v-for="movieData in movieJsonData"
       :key="movieData.id"

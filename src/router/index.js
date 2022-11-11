@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import HomeView from "@/views/HomeView"
 import MovieView from '@/views/MovieView'
 import RandomView from '@/views/RandomView'
 import WatchListView from '@/views/WatchListView'
@@ -7,6 +8,11 @@ import WatchListView from '@/views/WatchListView'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: "/",
+    name: "home",
+    component: HomeView
+  },
   {
     path: '/movie',
     name: 'movie',
