@@ -33,8 +33,9 @@ export default {
   opacity: 0.4;
 }
 .wish-movie {
+  width: 50%;
   background-color: rgb(72, 84, 84);
-  margin: 10px;
+  margin: 10px auto;
   font-size: 2rem;
   color: aliceblue;
   border-radius: 10px;

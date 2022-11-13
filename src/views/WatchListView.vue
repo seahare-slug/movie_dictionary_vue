@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>MY WISHLIST</h1>
-    <form @submit="submmitInputMovieData">
+    <form class="watch-list-form" @submit="submmitInputMovieData">
       <input class="fs-5 text-center" type="text" v-model="inputData" />
       <button class="fs-5 addBtn">Add</button>
     </form>
@@ -52,5 +52,8 @@ input {
 .addBtn {
   margin-left: 10px;
   border-radius: 5px;
+}
+.watch-list-form {
+  margin-bottom: 50px;
 }
 </style>
